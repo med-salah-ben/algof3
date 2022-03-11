@@ -1,0 +1,28 @@
+ALGORITHM solution1
+VAR
+    tab1, tab2 : array_of_intger ;
+    sum , i , j : INTEGER;
+BEGIN
+sum := 0;
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+
+     FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+
+       IF (tab1[i] = tab2[j] ) THEN
+             sum = sum + tab1[i];
+             break;
+        END_IF
+     END_FOR
+    END_FOR
+    FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+
+      FOR j FROM 0 TO tab1.length-1 STEP 1  DO
+
+          IF (tab1[j] = tab2[i] ) THEN
+            sum = sum + tab2[i];
+            break;
+          END_IF
+      END_FOR
+    END_FOR
+
+END

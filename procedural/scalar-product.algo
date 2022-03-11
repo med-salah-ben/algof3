@@ -1,0 +1,35 @@
+PROCEDURE dot_product(v1,v2: arARRAY_OF INTEGER , VAR dot : INTEGER)
+VAR
+    i : INTEGER;
+BEGIN
+    dot := 0 ;
+    i := 0;
+    IF (v1.length <> v2.length || V1.length > 3  || v1.length <2) THEN
+        Write("victors with different size we cannot calculat dot product");
+        dot = NAN;
+    END_IF
+    WHILE (i<v1.length) DO
+        dot := dot + v1[i]*v2[i]
+        i++
+    END_WHILE
+END 
+
+ALGORITHM orth_vectors
+VAR
+    v1,v2 :ARRAY_OF INTEGER;
+    dot : INTEGER
+BEGIN
+    //read size of elements of v1
+    n1:=read_size();
+    //read element of v1
+    read_array(n1,v1)
+    //read size v2
+    n2 := read_size();
+    read_array(n2,v2)
+    dot_product(v1,v2,dot);
+    IF (dot =0) THEN
+        write("V1 and V2 are orthogonal")
+    ELSE
+    write("V1 and V2 are not orthogonal")
+    END_IF
+END
